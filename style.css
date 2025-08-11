@@ -35,7 +35,7 @@ nav a {
 
 .hero {
   height: 90vh;
-  background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be') center/cover no-repeat;
+  background: #ccc; /* fundo cinza em vez de imagem */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +48,8 @@ nav a {
   padding: 40px;
   color: white;
   text-align: center;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .section {
@@ -71,6 +73,7 @@ nav a {
   border: 1px solid #ddd;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
 }
 
 form {
