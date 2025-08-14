@@ -1,6 +1,3 @@
-/* Importante: não esqueça de adicionar o link do Google Fonts no <head> do seu HTML! */
-/* https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap */
-
 /* RESET */
 * {
   margin: 0;
@@ -24,7 +21,7 @@ body {
 /* CABEÇALHO */
 header {
   background: #000;
-  color: #d4af37; /* dourado */
+  color: #d4af37;
   padding: 25px 0;
   position: fixed;
   width: 100%;
@@ -136,46 +133,42 @@ nav a:hover {
   margin: 50px 0;
 }
 
-/* TIPOS / CARDS */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 50px;
+/* MASONRY (novo estilo) */
+.masonry {
+  column-count: 3;
+  column-gap: 15px;
 }
 
-.card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 40px 25px;
-  box-shadow: 0 6px 25px rgba(212,175,55,0.25);
-  text-align: center;
-  flex: 1;
-  min-width: 270px;
-  max-width: 320px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  font-family: 'Montserrat', sans-serif;
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(212,175,55,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 40px rgba(212,175,55,0.6);
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
 }
 
-.card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #222;
-  letter-spacing: 1.2px;
+.masonry-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(212,175,55,0.5);
 }
 
-.card p {
-  font-size: 17px;
-  color: #555;
-  margin-top: 12px;
-  min-height: 48px;
+/* Responsivo do Masonry */
+@media (max-width: 900px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 1;
+  }
 }
 
 /* MAPA */
@@ -251,7 +244,7 @@ footer {
   margin-top: 80px;
 }
 
-/* RESPONSIVO */
+/* RESPONSIVO GERAL */
 @media (max-width: 768px) {
   header .container {
     flex-direction: column;
@@ -272,11 +265,6 @@ footer {
 
   .section h2 {
     font-size: 32px;
-  }
-
-  .card {
-    min-width: 100%;
-    max-width: 100%;
   }
 
   form {
