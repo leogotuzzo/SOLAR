@@ -271,3 +271,31 @@ footer {
     max-width: 100%;
   }
 }
+/* Masonry Grid */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.masonry-item {
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.05);
+}
