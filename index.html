@@ -1,134 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SOLAR</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salas Comerciais no Centro de Pelotas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css" />
+        header {
+            background: #1f3b4d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-  <style>
-    /* Masonry */
-    .masonry {
-      column-count: 3;
-      column-gap: 10px;
-    }
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 10px;
-    }
-    .masonry-item img {
-      width: 100%;
-      display: block;
-      border-radius: 8px;
-    }
-    @media (max-width: 900px) {
-      .masonry {
-        column-count: 2;
-      }
-    }
-    @media (max-width: 600px) {
-      .masonry {
-        column-count: 1;
-      }
-    }
-  </style>
+        .carrossel {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .descricao {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .descricao h2 {
+            color: #1f3b4d;
+        }
+
+        footer {
+            background: #1f3b4d;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header>
-    <div class="container">
-      <h1>SOLAR</h1>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#tipologias">Espaços</a>
-        <a href="#localizacao">Localização</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <h1>Salas Comerciais no Centro de Pelotas</h1>
+        <p>Rua General Osório esquina com Rua General Neto</p>
+    </header>
 
-  <!-- Seção Hero -->
-  <section class="hero">
-    <div class="overlay">
-      <h2>Centro Comercial de Alto Padrão</h2>
-      <p>Espaços ideais para lojas e escritórios em uma localização estratégica</p>
+    <div class="carrossel">
+        <div class="slides">
+            <!-- Troque pelos links das fotos reais -->
+            <img src="https://picsum.photos/id/1015/1000/500" alt="Fachada do prédio">
+            <img src="https://picsum.photos/id/1016/1000/500" alt="Interior da sala">
+            <img src="https://picsum.photos/id/1018/1000/500" alt="Vista da rua">
+        </div>
+        <div class="nav">
+            <button class="btn" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="btn" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
     </div>
-  </section>
 
-  <!-- Sobre o Empreendimento -->
-  <section id="sobre" class="section">
-    <div class="container">
-      <h2>Sobre o Centro Comercial</h2>
-      <p>
-        O Solar é um centro comercial de alto padrão, projetado para reunir <strong>lojas no térreo</strong> e <strong>salas comerciais ou escritórios no andar superior</strong>. Com arquitetura contemporânea, acabamento premium e localização privilegiada, oferece o ambiente ideal para negócios que buscam visibilidade, sofisticação e comodidade.
-      </p>
+    <div class="descricao">
+        <h2>Sobre o imóvel</h2>
+        <p>
+            Prédio histórico em localização estratégica, no coração de Pelotas.
+            No térreo, são 4 salas comerciais independentes, cada uma com banheiro e copa.
+            Acesso direto pela rua, sem portaria.
+        </p>
+
+        <h2>Vantagens</h2>
+        <ul>
+            <li>Localização privilegiada</li>
+            <li>Grande fluxo de pedestres e veículos</li>
+            <li>Ideal para lojas, consultórios e escritórios</li>
+            <li>Possibilidade de instalar elevador</li>
+        </ul>
+
+        <h2>Contato</h2>
+        <p>📞 (53) 99999-9999<br>✉️ contato@exemplo.com</p>
     </div>
-  </section>
 
-  <!-- Tipologias / Espaços -->
-<section id="tipologias" class="section light">
-  <div class="container">
-    <h2>Espaços Disponíveis</h2>
-    <div class="masonry-grid">
-      <!-- Cada item -->
-      <a href="#" class="masonry-item" style="height: 300px;">
-        <img src="https://picsum.photos/400/300" alt="Espaço 1">
-      </a>
-      <a href="#" class="masonry-item" style="height: 450px;">
-        <img src="https://picsum.photos/400/450" alt="Espaço 2">
-      </a>
-      <a href="#" class="masonry-item" style="height: 350px;">
-        <img src="https://picsum.photos/400/350" alt="Espaço 3">
-      </a>
-      <a href="#" class="masonry-item" style="height: 500px;">
-        <img src="https://picsum.photos/400/500" alt="Espaço 4">
-      </a>
-      <a href="#" class="masonry-item" style="height: 380px;">
-        <img src="https://picsum.photos/400/380" alt="Espaço 5">
-      </a>
-    </div>
-  </div>
-</section>
+    <footer>
+        &copy; 2025 Salas Comerciais em Pelotas - Todos os direitos reservados.
+    </footer>
 
-  <!-- Localização -->
-  <section id="localizacao" class="section">
-    <div class="container">
-      <h2>Localização</h2>
-      <p>Rua General Osório, Nº 725 – Pelotas/RS – CEP 96020-000</p>
-      <iframe
-        src="https://www.google.com/maps?q=Rua+General+Osório,+725,+Pelotas,+RS&output=embed"
-        width="100%"
-        height="400"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-    </div>
-  </section>
+    <script>
+        let indice = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slides img').length;
 
-  <!-- Contato -->
-  <section id="contato" class="section light">
-    <div class="container">
-      <h2>Fale Conosco</h2>
-      <form>
-        <input type="text" placeholder="Seu nome" required />
-        <input type="email" placeholder="Seu e-mail" required />
-        <textarea placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-  </section>
+        function mudarSlide(direcao) {
+            indice = (indice + direcao + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(${-indice * 100}%)`;
+        }
 
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2025 SOLAR Centro Comercial. Todos os direitos reservados.</p>
-  </footer>
+        // Avança automaticamente a cada 4 segundos
+        setInterval(() => mudarSlide(1), 4000);
+    </script>
 
 </body>
 </html>
