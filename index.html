@@ -37,8 +37,10 @@
         .slides img {
             width: 100%;
             flex-shrink: 0;
+            cursor: pointer;
         }
 
+        /* Navegação */
         .nav {
             position: absolute;
             top: 50%;
@@ -51,19 +53,44 @@
         }
 
         .btn {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             color: white;
             border: none;
-            padding: 10px;
+            padding: 14px;
             cursor: pointer;
             border-radius: 50%;
-            font-size: 18px;
+            font-size: 24px;
+            transition: background 0.3s;
         }
 
         .btn:hover {
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.85);
         }
 
+        /* Indicadores */
+        .indicadores {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .indicadores span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .indicadores .ativo {
+            background: rgba(255,255,255,0.95);
+        }
+
+        /* Conteúdo */
         .descricao {
             max-width: 1000px;
             margin: 20px auto;
@@ -71,10 +98,28 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            line-height: 1.6;
         }
 
         .descricao h2 {
             color: #1f3b4d;
+            margin-top: 0;
+        }
+
+        /* Botão CTA */
+        .cta {
+            display: inline-block;
+            background: #ff6600;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta:hover {
+            background: #e65c00;
         }
 
         footer {
@@ -93,9 +138,9 @@
         <p>Rua General Osório esquina com Rua General Neto</p>
     </header>
 
-    <div class="carrossel">
+    <div class="carrossel" id="carrossel">
         <div class="slides">
-            <!-- Troque pelos links das fotos reais -->
+            <!-- Troque as imagens pelos links reais -->
             <img src="https://picsum.photos/id/1015/1000/500" alt="Fachada do prédio">
             <img src="https://picsum.photos/id/1016/1000/500" alt="Interior da sala">
             <img src="https://picsum.photos/id/1018/1000/500" alt="Vista da rua">
@@ -104,6 +149,7 @@
             <button class="btn" onclick="mudarSlide(-1)">&#10094;</button>
             <button class="btn" onclick="mudarSlide(1)">&#10095;</button>
         </div>
+        <div class="indicadores"></div>
     </div>
 
     <div class="descricao">
@@ -122,27 +168,4 @@
             <li>Possibilidade de instalar elevador</li>
         </ul>
 
-        <h2>Contato</h2>
-        <p>📞 (53) 99999-9999<br>✉️ contato@exemplo.com</p>
-    </div>
-
-    <footer>
-        &copy; 2025 Salas Comerciais em Pelotas - Todos os direitos reservados.
-    </footer>
-
-    <script>
-        let indice = 0;
-        const slides = document.querySelector('.slides');
-        const totalSlides = document.querySelectorAll('.slides img').length;
-
-        function mudarSlide(direcao) {
-            indice = (indice + direcao + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(${-indice * 100}%)`;
-        }
-
-        // Avança automaticamente a cada 4 segundos
-        setInterval(() => mudarSlide(1), 4000);
-    </script>
-
-</body>
-</html>
+        <h2>Contato</h2
